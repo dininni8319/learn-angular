@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface IArticle {
-  title: string 
-  link: string
-}
+import { Article } from './article.module'
 
 @Component({
   selector: 'app-article',
@@ -12,6 +8,24 @@ interface IArticle {
 })
 
 export class ArticleComponent {
- @Input() article: IArticle = { title: '', link: ''}
+ @Input() article: Article = { 
+    title: '', 
+    link: '', 
+    vote: 0, 
+    voteUp() {},
+    voteDown() {},
+    domain() {
+      return ''
+    }
+  }
+ 
+  constructor(){}
 
+  voteUp() {
+    this.article.voteUp()
+  }
+  
+  voteDown() {
+    this.article.voteDown()
+  }
 }

@@ -1,26 +1,20 @@
-
-<div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-  <div class="flex items-center justify-between mb-4">
-      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Votes</h5>
-      
- </div>
- <div class="flow-root">
-      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-          <li class="py-3 sm:py-4">
-              <div class="flex items-center space-x-4">
-                  <div class="flex-1 min-w-0">
-                      <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          {{ article.title }}
-
-                      </p>
-                     
-                  </div>
-                  <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                      <a [href]="article.link">{{ article.link }}</a>
-                  </div>
-              </div>
-          </li>
-      </ul>
- </div>
+<div class="card w-full flex mt-2 max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex justify-between mb-4 w-2/3">
+        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white bg-gray-300 p-6 rounded-lg">Votes: {{ article.vote }}</h5>
+    </div>
+    <div class="flow-root w-3/4 ps-3">         
+        <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                {{ article.title }}
+            </p>
+        </div>
+        <div class="pt-1 inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+            <a [href]="article.link">{{ article.domain() }}</a>
+        </div>
+        <div class="flex justify-between mt-2 w-2/3">
+            <button (click)="voteUp()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded px-2 py-1">Upvote</button>
+            <button (click)="voteDown()" class="bg-red-500 hover:bg-red-700 text-white font-bold rounded ms-2 px-1">Downvote</button>
+        </div>
+    </div>
 </div>
 
