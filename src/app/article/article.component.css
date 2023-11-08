@@ -1,3 +1,9 @@
 .card {
-  width: 25rem;
+  width: 30rem;
+}
+ /* write a mediaquery */
+@media (max-width: 768px) {
+  .card {
+    width: 99%;
+  }
 }
